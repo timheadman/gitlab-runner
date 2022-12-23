@@ -6,6 +6,9 @@ if [[ "$#" -lt 1 ]]; then
 fi
 
 url=$1
+url=${url%/}
+url=${url#https://}
+
 file_name=${url%:*}
 token=$2
 volume=gitlab-runner-config
